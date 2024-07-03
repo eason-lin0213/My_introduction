@@ -14,8 +14,7 @@
   font-weight: 1000;
 }
 .sans-white{
-  font-weight: 1000;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 body{
   font-family: 'Noto Sans TC', sans-serif;
@@ -27,7 +26,7 @@ body{
   padding: 1rem;
   display: inline-block;
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .navbar{
@@ -54,7 +53,7 @@ body{
   text-decoration: none;
   color: black;
   &:hover, &.active {
-    color: blue;
+    color: rgb(80, 16, 255);
   }
 }
 
@@ -66,7 +65,7 @@ body{
   width: 32%;
   background-image: linear-gradient(to bottom, rgb(255, 178, 34),rgb(255, 198, 91));//線性漸層
   text-align: center;
-  color: black;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
