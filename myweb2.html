@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;900&family=Open+Sans:wght@400;700;800&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="myweb2.css" />
+    <title>林易辰的自我介紹</title>
+</head>
+  
+<body>
+        <!-- 導覽列-->
+        <nav class = "navbar">
+          <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+              
+              <div class="brand open-sans-extrabold">我的個人檔案</div>  <!-- 套用這些字體與格式-->
+
+              <ul class = "navbar-list"> <!-- 套用list-item的格式(黑字，滑鼠到上面會變藍字)-->
+                  <li><a href="https://eason-lin0213.github.io/MyWeb/#" class="list-item">關於我</a></li>
+              </ul>
+             </div>
+
+          </div>
+        </nav>
+    
+                    
+    <header>
+      <div class="container p-relative"><!-- 圖片套用絕對位置跟pos-3d(自訂有套用pos-3d的圖片，包在 add3d 函數，會根據滑鼠的位置來更新元素的 transform 屬性，從而實現 3D 效果。)-->
+      <img src="images/header-top-decoration.png" class="p-absolute pos-3d" data-layer="8" style="left: 35px; top:0; z-index: -1;" alt="">
+      <img src="images/header-main-decoration.png" class="p-absolute pos-3d" data-layer="10" style="left: 480px; top:175px; z-index: -1;" alt="">
+      
+      <div class="row">
+
+        <div class="col-md-5 d-flex align-items-center">
+          
+          <div class="header-content">
+            <h2 class="sans-black">嗨！</h2>
+            <h1 class="sans-black">我是林易辰</h1>
+            <p class="sans-black">目前就讀於國立台灣師範大學科技應用學系雙主修電機系，以下為個人的相關網站及簡單的自我介紹</p>
+ 
+          
+            <div class="container">
+              <button class="cta-button button-primary" onclick="window.location.href='https://github.com/eason-lin0213'">GitHub</button>
+              <button class="cta-button button-primary" onclick="window.location.href='https://www.instagram.com/easonlin0213/'">Instagram</button>
+              <button class="cta-button button-primary" onclick="window.location.href='https://eason-lin0213.github.io/MyWeb/#'">自我介紹</button>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            </div>
+        </div>
+
+        <div class ="col-md-5 offset-md-1 mt-5" > 
+          <img src="images/eason_small.png" class="pos-3d" data-layer="6" data-invert="1" alt="">  
+        </div>
+
+
+       </div>
+
+      </div>
+    </header>
+
+
+
+    <section class="section"></section>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('mousemove', (e) => {
+          //傳入滑鼠位置
+          document.querySelectorAll('.pos-3d').forEach((element) => {
+            add3d(element, e);
+          });
+        });
+      });
+
+      function add3d(element, e) {
+        // 滑鼠位置
+        const m_x = e.pageX;
+        const m_y = e.pageY;
+
+        const w_w = window.innerWidth,
+          w_h = window.innerHeight,
+          o_w = element.offsetWidth,
+          distance = (element.offsetWidth - w_w) / 2,
+          layer = Number(element.getAttribute('data-layer')),
+          invert = Number(element.getAttribute('data-invert'));
+
+        // 物件在頁面上的位置
+        const o_x = w_w / 2;
+        const o_y = w_h / 2;
+
+        // 兩者的距離差
+        let w_x = m_x - o_x;
+        let w_y = m_y - o_y;
+
+        // 距離相乘後開平方
+        const w_wSqrt = Math.sqrt(w_w / 2);
+        const d = distance / w_wSqrt / layer;
+
+        // 距離計算
+        let s_x = Math.sqrt(Math.abs(w_x));
+        if (w_x < 0) {
+          s_x = -s_x;
+        }
+
+        let d_x = s_x * d;
+        // 加入樣式
+        element.style.transform = `translateX(${invert ? d_x : -d_x}px)`;
+      }
+    </script>
+
+
+
+
+
+    </script>
+
+        
+          
+  <!--        
+    <main>
+        <section class="hero">
+            <h1>嗨！</h1>
+            <h2>我是 UI 設計師</h2>
+            <p>這段介紹文字是一個模擬文本。它被用來表示文本區域在網站中的位置和大小。</p>
+            <button class="cta-button">看我的作品</button>
+            <img src="path-to-your-image.jpg" alt="Profile Image" class="profile-image">
+        </section>
+    </main>
+-->
+</body>
+</html>

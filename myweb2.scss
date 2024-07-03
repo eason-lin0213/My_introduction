@@ -1,0 +1,95 @@
+@import '../Myweb2/bootstrap-5.3.3-dist/css/bootstrap-reboot.css';
+@import '../Myweb2/bootstrap-5.3.3-dist/css/bootstrap-grid.css';
+/* Typography */
+
+//用Open Sans這個字體，找不到的話因為有加sans-serif所以自動套用黑體
+.open-sans-extrabold{
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 1000;
+}
+
+.sans-black{
+  font-family: 'Noto Sans TC',sans-serif;
+  font-weight: 1000;
+}
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  line-height: 2;
+}
+.brand{
+  font-size: 24px;
+  padding: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar{
+  position: fixed;
+  top:0px;
+  left:0px;
+  right:0;
+  background-color: rgba(rgb(239, 199, 199),0.3);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+
+.navbar-list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-item{
+  padding: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  &:hover, &.active {
+    color: blue;
+  }
+}
+
+.button-primary{
+  padding: 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 100px;
+  width: 32%;
+  background-image: linear-gradient(to bottom, rgb(255, 178, 34),rgb(255, 198, 91));//線性漸層
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover, &.active {
+    background-image: linear-gradient(to bottom, rgb(255, 178, 34),rgb(255, 198, 91));//線性漸層
+    box-shadow: 0px 0px 10px rgb(139, 92, 5) ;
+  }
+}
+
+.d-flex{
+  display: flex;
+}
+
+/*在導覽列加中間空間*/
+.justify-content-between{
+  justify-content: space-between;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.p-relative{
+  position: relative;
+}
+
+.p-absolute{
+  position: absolute;
+}
+
