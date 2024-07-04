@@ -65,14 +65,14 @@ body{
   width: 32%;
   background-image: linear-gradient(to bottom, rgb(255, 178, 34),rgb(255, 198, 91));//線性漸層
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(59, 47, 47);
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
 
   &:hover, &.active {
     background-image: linear-gradient(to bottom, rgb(255, 178, 34),rgb(255, 198, 91));//線性漸層
-    box-shadow: 0px 0px 10px rgb(139, 92, 5) ;
+    box-shadow: 0px 0px 10px rgb(186, 65, 0) ;
   }
 }
 
